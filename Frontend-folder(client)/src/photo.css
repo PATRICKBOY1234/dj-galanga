@@ -1,0 +1,43 @@
+/* Small round icons: zoomed in on the face and headphones */
+.dj-icon svg,
+.ad-login-avatar svg,
+.ad-brand-avatar svg {
+  display: none;
+}
+
+.dj-icon,
+.ad-login-avatar,
+.ad-brand-avatar {
+  background: #0b0b10 url("./assets/dj-galanga.png") no-repeat;
+  background-size: 569.5% 320%;
+  background-position: 64.3% 3.6%;
+}
+
+/* Home page card: the whole DJ instead of the drawn artwork */
+.hero-cover {
+  background: #0b0b10 url("./assets/dj-galanga.png") no-repeat;
+  background-size: cover;
+  background-position: 70% 0%;
+}
+.hero-cover .art {
+  display: none;
+}
+
+/* About page banner */
+.about::before {
+  content: "";
+  display: block;
+  height: 280px;
+  margin-bottom: 22px;
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  background: #0b0b10 url("./assets/dj-galanga.png") no-repeat;
+  background-size: cover;
+  background-position: center 25%;
+}
+
+@media (max-width: 760px) {
+  .about::before {
+    height: 200px;
+  }
+}

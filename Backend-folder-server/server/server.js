@@ -44,9 +44,16 @@ const pool = mysql.createPool({
 const app = express();
 app.disable("x-powered-by");
 
-const cors = require("cors");
-app.use(cors({ origin: true, credentials: true }));
-app.options("*", cors());
+// Add this custom CORS block
+app.use((req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
+    if (req.method === 'OPTIONS') {
+        return res.sendStatus(200);
+    }
+    next();
+});
 
 const allowedOrigins = (process.env.CLIENT_ORIGIN || "http://localhost:5173")
   .split(",")

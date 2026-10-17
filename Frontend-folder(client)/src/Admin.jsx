@@ -2,7 +2,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import "./Admin.css";
 import { DjAvatar } from "./Art";
 
-const API_URL = "http://localhost:5000/api";
+const API_URL = "https://dj-galanga-backend.onrender.com/api";
 const TOKEN_KEY = "dg_admin_token";
 const CATEGORIES = [
   "Ugandan", "Kikkade", "Kadongo Kamu", "Afrobeats", "Dancehall", "Reggae", "Amapiano", "Old School", "Gospel",

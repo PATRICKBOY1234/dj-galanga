@@ -5,7 +5,7 @@ import { DJ_PHONE, DJ_PHONE_LINK, DJ_EMAIL, SOCIALS } from "./links";
 
 const DJ_NAME = "DJ GALANGA";
 const TAGLINE = "Strictly African Music";
-const API_URL = "http://localhost:5000/api";
+const API_URL = "https://dj-galanga-backend.onrender.com/api";
 const PAGE_SIZE = 6;
 const TRENDING_LIMIT = 8;
 

@@ -42,7 +42,10 @@ const pool = mysql.createPool({
 });
 
 const app = express();
-app.disable("x-powered-by");
+app.disable("x-powered-by");// Add these CORS lines right here:
+const cors = require("cors");
+app.use(cors());
+
 
 const allowedOrigins = (process.env.CLIENT_ORIGIN || "http://localhost:5173")
   .split(",")

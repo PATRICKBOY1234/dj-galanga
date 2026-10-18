@@ -1,3 +1,19 @@
+const express = require('express');
+const cors = require('cors');
+const mysql = require('mysql2'); // or whatever mysql package you are using
+
+const app = express();
+app.disable("x-powered-by");
+
+// Allow all origins so Vercel can connect without getting blocked
+app.use(cors({
+    origin: '*',
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+}));
+
+app.use(express.json());
+
 require("dotenv").config();
 const express = require("express");
 const cors = require("cors");

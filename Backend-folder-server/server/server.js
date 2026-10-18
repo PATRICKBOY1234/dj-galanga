@@ -57,9 +57,6 @@ const pool = mysql.createPool({
   }
 });
 
-const app = express();
-app.disable("x-powered-by");
-
 // Add this custom CORS block
 app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*");
@@ -83,6 +80,7 @@ app.use(
     },
   })
 );
+
 app.use(express.json({ limit: "100kb" }));
 app.use("/uploads", express.static(UPLOAD_DIR));
 

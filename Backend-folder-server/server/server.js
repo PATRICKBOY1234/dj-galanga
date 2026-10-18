@@ -68,19 +68,6 @@ app.use((req, res, next) => {
     next();
 });
 
-const allowedOrigins = (process.env.CLIENT_ORIGIN || "http://localhost:5173")
-  .split(",")
-  .map((o) => o.trim());
-
-app.use(
-  cors({
-    origin: (origin, cb) => {
-      if (!origin || allowedOrigins.includes(origin)) return cb(null, true);
-      return cb(new Error("Origin not allowed"));
-    },
-  })
-);
-
 app.use(express.json({ limit: "100kb" }));
 app.use("/uploads", express.static(UPLOAD_DIR));
 
